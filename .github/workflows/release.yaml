@@ -6,6 +6,7 @@ on:
 
 jobs:
   release:
+    if: "! contains(toJSON(github.event.commits.*.message), 'chore(release):')"
     runs-on: ubuntu-latest
 
     steps:
